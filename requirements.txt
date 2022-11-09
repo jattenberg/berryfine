@@ -1,0 +1,16 @@
+statsmodels
+numba
+pandas
+black
+jupyter
+seaborn
+fastapi
+pydantic
+uvicorn[standard]
+strawberry-graphql[fastapi]
+tqdm
+strawberry-sqlalchemy-mapper
+sqlalchemy
+alembic
+databases[postgresql]
+python-dotenv

@@ -1,3 +1,4 @@
+nba_api
 statsmodels
 numba
 pandas

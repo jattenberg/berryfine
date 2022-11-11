@@ -1,5 +1,4 @@
 from logging.config import fileConfig
-
 from sqlalchemy import engine_from_config
 from sqlalchemy import pool
 
@@ -13,8 +12,9 @@ config = context.config
 # here we allow ourselves to pass interpolation vars to alembic.ini
 # fron the host env
 section = config.config_ini_section
-config.set_section_option(section, "DB_USER", os.environ.get("RENDER_PG_UN"))
-config.set_section_option(section, "DB_PASS", os.environ.get("RENDER_PG_PW"))
+config.set_section_option(section, "DB_USER", os.environ.get("oPG_UN"))
+config.set_section_option(section, "DB_PASS", os.environ.get("PG_PW"))
+config.set_section_option(section, "DB_URL", os.environ.get("PG_URL"))
 
 # Interpret the config file for Python logging.
 # This line sets up loggers basically.

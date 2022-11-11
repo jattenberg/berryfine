@@ -30,5 +30,9 @@ also considering NBA data from [balldontlie](https://www.balldontlie.io/#get-all
 # inits the alembic stuff
 venv/bin/alembic init alembic
 
+# set up 
 
 ```
+
+# TODO:
+1. secret management for cloud

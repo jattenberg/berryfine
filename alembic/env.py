@@ -12,9 +12,10 @@ config = context.config
 # here we allow ourselves to pass interpolation vars to alembic.ini
 # fron the host env
 section = config.config_ini_section
-config.set_section_option(section, "DB_USER", os.environ.get("oPG_UN"))
+config.set_section_option(section, "DB_USER", os.environ.get("PG_UN"))
 config.set_section_option(section, "DB_PASS", os.environ.get("PG_PW"))
 config.set_section_option(section, "DB_URL", os.environ.get("PG_URL"))
+config.set_section_option(section, "DB_NAME", os.environ.get("PG_DB"))
 
 # Interpret the config file for Python logging.
 # This line sets up loggers basically.
@@ -23,8 +24,8 @@ if config.config_file_name is not None:
 
 # add your model's MetaData object here
 # for 'autogenerate' support
-from myapp import mymodel
-target_metadata = mymodel.Base.metadata
+from berryfine.models.player import Base as player_base  # noqa
+target_metadata = player_base.metadata
 #target_metadata = None
 
 # other values from the config, defined by the needs of env.py,

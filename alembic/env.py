@@ -25,7 +25,8 @@ if config.config_file_name is not None:
 # add your model's MetaData object here
 # for 'autogenerate' support
 from berryfine.models.player import Base as player_base  # noqa
-target_metadata = player_base.metadata
+from berryfine.models.team import Base as team_base  # noqa
+target_metadata = [player_base.metadata, team_base.metadata]
 #target_metadata = None
 
 # other values from the config, defined by the needs of env.py,

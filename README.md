@@ -1,5 +1,5 @@
 # berryfine
-An attempt to experiment with a few technologies:
+### underpinnings:
 - fastapi
 - strawberry
 - sqlalchemy
@@ -7,6 +7,7 @@ An attempt to experiment with a few technologies:
 - [strawberry-sqlalchemy-mapper](https://github.com/expedock/strawberry-sqlalchemy-mapper)
 - next.js
 - [nba_api](https://github.com/swar/nba_api)
+- [openblocks](https://github.com/openblocks-dev/openblocks)
 
 and maybe some others. 
 

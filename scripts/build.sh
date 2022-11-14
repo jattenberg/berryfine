@@ -4,6 +4,8 @@
 
 set -e
 
+py=$(which python)
+
 if ! command -v virtualenv &> /dev/null
 then
     echo "virtualenv could not be found"
@@ -14,9 +16,9 @@ else
 fi
 
 venv="venv"
-echo "making virtualenv: $venv"
+echo "making virtualenv $venv using python interpreter: $py"
 
-virtualenv $venv
+virtualenv --python $py $venv
 
 $venv/bin/pip install --upgrade pip pytest
 $venv/bin/pip install pip-tools

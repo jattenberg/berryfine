@@ -26,14 +26,32 @@ also considering NBA data from [balldontlie](https://www.balldontlie.io/#get-all
 
 ```
 # makes the virtualenv in ./venv
-./build.sh
+./scripts/build.sh
 
 # inits the alembic stuff
 venv/bin/alembic init alembic
 
-# set up 
+# make the appropriate database migration, auto-genned
+# for the sqlalchamy models
+# note that this uses onepassword (op) to manage local secrets
+./scripts/init_alembic.sh
+
+# commit changes to remote postgres
+./scripts/init_postgres.sh
+
 
 ```
+### Revert DB Migration
+At this point, you can revert the migrations using, for instance:
+```
+PG_UN=$(op item get render_postgres --vault nba_app --fields username)\
+     PG_PW=$(op item get render_postgres --vault nba_app --fields password)\
+     PG_URL=$(op item get render_postgres --vault nba_app --fields server)\
+     PG_DB=$(op item get render_postgres --vault nba_app --fields database)\
+     venv/bin/alembic downgrade -1
+```
+
+
 
 # TODO:
 1. secret management for cloud

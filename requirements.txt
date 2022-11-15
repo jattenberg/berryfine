@@ -16,3 +16,4 @@ alembic
 databases[postgresql]
 python-dotenv
 psycopg2
+meltano

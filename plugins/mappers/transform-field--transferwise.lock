@@ -1,0 +1,11 @@
+{
+  "plugin_type": "mappers",
+  "name": "transform-field",
+  "namespace": "transform_field",
+  "variant": "transferwise",
+  "label": "transform-field",
+  "docs": "https://hub.meltano.com/mappers/transform-field--transferwise",
+  "repo": "https://github.com/transferwise/pipelinewise-transform-field",
+  "pip_url": "pipelinewise-transform-field",
+  "executable": "transform-field"
+}

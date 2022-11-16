@@ -39,3 +39,24 @@ plugins:
       user: meltano
       dbname: postgres
       schema: analytics
+  mappers:
+  - name: transform-field
+    variant: transferwise
+    pip_url: pipelinewise-transform-field
+    executable: transform-field
+    mappings:
+    - name: hide-github-mails
+      config:
+        transformations:
+        - field_id: commit
+          tap_stream_name: commits
+          field_paths: [author/email, committer/email]
+          type: HASH
+jobs:
+- name: github-to-postgres
+  tasks:
+  - tap-github hide-github-mails target-postgres dbt-postgres:run
+schedules:
+- name: github-to-postgres
+  interval: '@daily'
+  job: github-to-postgres

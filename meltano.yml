@@ -29,6 +29,10 @@ plugins:
       user: meltano
       dbname: postgres
       add_metadata_columns: true
+  orchestrators:
+  - name: airflow
+    variant: apache
+    pip_url: apache-airflow==2.1.2 --constraint https://raw.githubusercontent.com/apache/airflow/constraints-2.1.2/constraints-${MELTANO__PYTHON_VERSION}.txt
   transformers:
   - name: dbt-postgres
     variant: dbt-labs
@@ -39,6 +43,10 @@ plugins:
       user: meltano
       dbname: postgres
       schema: analytics
+  files:
+  - name: files-airflow
+    variant: meltano
+    pip_url: git+https://github.com/meltano/files-airflow.git
   mappers:
   - name: transform-field
     variant: transferwise

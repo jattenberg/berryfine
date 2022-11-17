@@ -22,5 +22,5 @@ virtualenv --python $py $venv
 
 $venv/bin/pip install --upgrade pip pytest pip-tools
 $venv/bin/pip install -r requirements.txt
-$venv/bin/jupyter nbextension install https://github.com/drillan/jupyter-black/archive/master.zip
-$venv/bin/jupyter nbextension enable jupyter-black-master/jupyter-black
+#$venv/bin/jupyter nbextension install https://github.com/drillan/jupyter-black/archive/master.zip
+#$venv/bin/jupyter nbextension enable jupyter-black-master/jupyter-black

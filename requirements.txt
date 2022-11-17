@@ -3,8 +3,6 @@ statsmodels
 numba
 pandas
 black
-jupyter
-seaborn
 fastapi
 pydantic
 uvicorn[standard]

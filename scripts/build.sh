@@ -22,3 +22,4 @@ virtualenv --python $py $venv
 
 $venv/bin/pip install --upgrade pip pytest pip-tools
 $venv/bin/pip install -r requirements.txt
+$venv/bin/meltano install

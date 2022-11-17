@@ -1,17 +1,3 @@
-nba_api
-statsmodels
-numba
-pandas
 black
-fastapi
 pydantic
-uvicorn[standard]
-strawberry-graphql[fastapi]
-tqdm
-strawberry-sqlalchemy-mapper
-sqlalchemy
-alembic
-databases[postgresql]
-python-dotenv
-psycopg2
 meltano

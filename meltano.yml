@@ -26,9 +26,10 @@ plugins:
     variant: transferwise
     pip_url: pipelinewise-target-postgres
     config:
-      user: meltano
-      dbname: postgres
+      user: one_tester
+      dbname: test_one
       add_metadata_columns: true
+      host: dpg-cdltuf9gp3ji0io1mk00-a
   orchestrators:
   - name: airflow
     variant: apache

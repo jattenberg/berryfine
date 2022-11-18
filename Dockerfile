@@ -13,6 +13,7 @@ RUN pip install --upgrade pip pip-tools pytest && \
 COPY . .
 
 #RUN --mount=type=secret,id=_env,dst=/etc/secrets/.env cat .env
+#--mount type=bind,source=/tmp,target=/usr 
 RUN meltano install --clean
 
-#ENTRYPOINT ["meltano", "run", "github-to-postgres"]
+ENTRYPOINT   ["meltano", "run", "github-to-postgres"]

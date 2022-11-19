@@ -16,4 +16,5 @@ COPY . .
 #--mount type=bind,source=/tmp,target=/usr 
 RUN meltano install --clean
 
-ENTRYPOINT   ["meltano", "run", "github-to-postgres"]
+#ENTRYPOINT   ["meltano", "run", "github-to-postgres"]
+ENTRYPOINT   ["ls", "-lthsa"]

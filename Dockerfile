@@ -8,12 +8,15 @@ RUN apt-get update && apt-get install -y bash gcc python3-dev
 ADD requirements.txt /app/
 
 RUN pip install --upgrade pip pip-tools pytest && \
+  usermod --unlock root && \
+  mkdir -p ~/.ssh && \
+  chmod 0700 ~/.ssh && \
   pip install -r requirements.txt
 
 COPY . .
 
 #RUN --mount=type=secret,id=_env,dst=/etc/secrets/.env cat .env
-#--mount type=bind,source=/tmp,target=/usr 
+#--mount type=bind,source=/tmp,target=/usr
 RUN meltano install --clean
 
 #ENTRYPOINT   ["meltano", "run", "github-to-postgres"]

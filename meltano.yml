@@ -29,7 +29,7 @@ plugins:
       user: one_tester
       dbname: test_one
       add_metadata_columns: true
-      host: dpg-cdltuf9gp3ji0io1mk00-a
+      host: dpg-cdltuf9gp3ji0io1mk00-a.oregon-postgres.render.com
   orchestrators:
   - name: airflow
     variant: apache
@@ -39,7 +39,7 @@ plugins:
     variant: dbt-labs
     pip_url: dbt-core~=1.3.0 dbt-postgres~=1.3.0
     config:
-      host: dpg-cdltuf9gp3ji0io1mk00-a
+      host: dpg-cdltuf9gp3ji0io1mk00-a.oregon-postgres.render.com
       port: 5432
       user: one_tester
       dbname: test_one
